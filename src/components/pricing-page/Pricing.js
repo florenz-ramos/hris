@@ -1,32 +1,33 @@
 import { CheckIcon } from '@heroicons/react/20/solid'
+import { Link } from 'react-router-dom'
 
 const tiers = [
   {
     name: 'Basic',
     id: 'tier-hobby',
-    href: '#',
+    href: '/contact-us',
     priceMonthly: '₱3000',
     description: "The perfect plan if you're just getting started with our product.",
     features: [
-      '25 products', 
-      'Up to 10,000 subscribers', 
-      'Advanced analytics', 
-      '24-hour support response time'
+      'Up to 50 employee records', 
+      'QR code generation', 
+      'Attendance Management', 
+      'Payroll Management'
     ],
     featured: false,
   },
   {
     name: 'Pro',
     id: 'tier-enterprise',
-    href: '#',
+    href: '/contact-us',
     priceMonthly: '₱5000',
     description: 'Dedicated support and infrastructure for your company.',
     features: [
-      'Unlimited products',
-      'Unlimited subscribers',
+      'Unlimited employee records',
+      'Unlimited QR code generation',
+      'Attendance Management',
+      'Payroll Management',
       'Advanced analytics',
-      'Dedicated support representative',
-      'Marketing automations',
       'Custom integrations',
     ],
     featured: true,
@@ -109,8 +110,8 @@ export default function Pricing() {
                 </li>
               ))}
             </ul>
-            <a
-              href={tier.href}
+            <Link
+              to={tier.href}
               aria-describedby={tier.id}
               className={classNames(
                 tier.featured
@@ -120,7 +121,7 @@ export default function Pricing() {
               )}
             >
               Get started today
-            </a>
+            </Link>
           </div>
         ))}
       </div>
